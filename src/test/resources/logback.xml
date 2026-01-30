@@ -1,0 +1,25 @@
+<configuration>
+
+    <!-- APPENDER = destino del log (consola, archivo, etc.) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- PATRÓN del log:
+                 %d = fecha/hora
+                 %-5level = nivel (INFO, WARN, ERROR)
+                 %logger{36} = nombre de clase (cortado a 36 chars)
+                 %msg = mensaje
+                 %n = salto de línea
+            -->
+            <pattern>%d{HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- ROOT = nivel mínimo global
+         INFO: muestra INFO, WARN, ERROR
+         DEBUG: muestra TODO (más verboso)
+    -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

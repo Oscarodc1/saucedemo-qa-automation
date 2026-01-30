@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="listeners.ScreenshotListener"/>
+    </listeners>
+
+    <test name="SauceDemo">
+        <classes>
+            <!-- Login -->
+            <class name="tests.LoginUsersInvalidCredentialsTest"/>
+            <class name="tests.LoginUsersSuccessTest"/>
+            <class name="tests.LoginUsersFailTest"/>
+
+            <!-- Inventory -->
+            <class name="tests.InventorySmokeTest"/>
+            <class name="tests.InventoryLogoutTest"/>
+        </classes>
+    </test>
+</suite>
